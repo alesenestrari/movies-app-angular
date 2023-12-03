@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="wrapper">
+    <mat-card>
+      <mat-card-header>
+       <h1 style="font-weight: 500; margin: 0;">{{ movie.title }}</h1>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="content">
+          <img mat-card-image [src]="movie.image" width="550px">
+          <div class="details">
+            <div class="row">
+              <p class="label">Descpription: </p><p>{{ movie.description }}</p>
+            </div>
+            <div class="row">
+              <p class="label">Rating: </p><p>{{ movie.rating }}</p>
+            </div>
+            <div class="row">
+              <p class="label">Duration: </p><p>{{ movie.duration }}</p>
+            </div>
+            <div class="row">
+              <p class="label">Genre: </p><p>{{ movie.genre }}</p>
+            </div>
+            <div class="row">
+              <p class="label">Released date: </p><p>{{ movie.released_date }}</p>
+            </div>
+            <p class="label">Trailer: </p>
+            <div [innerHTML]="movie.trailer_link | safeYoutubeUrl"></div>
+
+            <button (click)="onRemove()" [color]="alreadyStored ? 'warn' : 'primary'" mat-raised-button>{{ alreadyStored ? 'Remove from watchlist' :'Add to watchlist' }}</button>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

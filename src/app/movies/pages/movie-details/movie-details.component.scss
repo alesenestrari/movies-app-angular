@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card {
+  width: 1200px;
+  height: 920px;
+  background: rgba($color: rgb(176, 227, 240), $alpha: 1.0);
+  .content {
+    display: flex;
+    gap: 12px;
+  }
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.date {
+  display: flex;
+  gap: 10px;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}

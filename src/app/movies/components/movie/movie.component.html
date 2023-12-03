@@ -1,0 +1,25 @@
+<mat-card style="cursor: pointer;" (click)="onClick()">
+  <mat-card-header>
+    <h3 style="font-weight: 500; margin: 0;">{{ movie.title }}</h3>
+    <div class="spacer"></div>
+    <button *ngIf="!alreadyStored else stored" mat-icon-button style="position: relative; bottom: 10px;" matTooltip="Add to Watchlist" (click)="onAddToWatchlist($event)">
+      <mat-icon>playlist_add</mat-icon>
+    </button>
+    <ng-template #stored>
+      <h3 style="font-weight: 600; margin: 0; color: green;">On my Watchlist</h3>
+    </ng-template>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="content">
+      <img mat-card-image [src]="movie.image" width="120px">
+      <p>{{ movie.description }}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-footer style="padding: 16px 16px;">
+    <p>{{ movie.genre }}</p>
+    <div class="date">
+      <h3 style="font-weight: 500;">Released date: </h3>
+      <h3 >{{ movie.released_date }}</h3>
+    </div>
+  </mat-card-footer>
+</mat-card>

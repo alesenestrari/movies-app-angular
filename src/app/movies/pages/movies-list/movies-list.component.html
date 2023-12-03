@@ -1,0 +1,14 @@
+<div class="main-container">
+  <h4>Movies List</h4>
+  <div class="radio-buttons-container">
+    <mat-radio-group aria-label="Select an option" color="primary" (change)="onSortChange($event)">
+      <mat-radio-button value="title">Title</mat-radio-button>
+      <mat-radio-button value="released_date">Release date</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="movies-container">
+    <div *ngFor="let movie of movies" class="movies-wrapper">
+      <app-movie [movie]="movie" (addToWatchList)="onAddToWatchlist($event)"></app-movie>
+    </div>
+  </div>
+</div>
